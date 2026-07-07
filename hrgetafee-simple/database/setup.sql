@@ -41,6 +41,8 @@ CREATE TABLE users (
   role_id INT NOT NULL,
   employee_id INT,
   status ENUM('active', 'inactive') DEFAULT 'active',
+  deactivation_reason VARCHAR(255),
+  deactivated_at DATETIME,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   last_login DATETIME,
   FOREIGN KEY (role_id) REFERENCES roles(role_id),
